@@ -1,6 +1,16 @@
-<html>
-	<body>
-	
+<html ng-app="app1">
+	<body ng-controller="mainCtrl">
+
+	<input type="text" placeholder="Type Here" ng-model="typeNow"></br>
+	{{typeNow}}<hr>
+
+	Filter<input type="text" ng-model="filterIt">
+
+	<div class="arr" ng-repeat="obj in svcArray | filter:filterIt" >
+		<h3>{{obj.one}}</h3>
+		<h5>{{obj.two}}</h5>
+	</div>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
